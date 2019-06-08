@@ -5,7 +5,7 @@ class Source extends React.Component{
         const {id, title, author, publisher, year} = this.props.source;
         return (
             <li key={id}>
-                {author.firstName}, {author.lastName}. <cite>{title}</cite>. {publisher}, {year}.
+                {author.lastName}, {author.firstName}. <cite>{title}</cite>. {publisher}, {year}.
             </li>
         )
     }
