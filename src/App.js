@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Sources from './components/sources';
+import EditForm from './components/editForm';
+import SelectForm from './components/selectForm';
 
 class App extends React.Component { 
   state = {
@@ -38,21 +40,14 @@ class App extends React.Component {
     ]
   }
   render(){
+    const {sources} = this.state;
     return (
       <div id="Works" className="container App">
       <h1 id="head">Works Cited</h1>      
-      <Sources sources={this.state.sources}/>
+      <Sources sources={sources}/>
       <fieldset className="row">
-        <form className="form-group col-12 col-md-6" id="source-form">
-          Form goes here
-        </form>
-
-        <form id="editPanel" className="col-12 col-md-6">
-          <select id="srcOptions" className="form-control">
-          </select>
-          <button id="edit-btn" className="btn btn-default">Edit Source</button>
-          <button id="remove-btn" className="btn">Remove Source</button>
-        </form>
+        <EditForm sources={sources} />
+        <SelectForm sources={sources} />        
       </fieldset>
     </div>
     );
