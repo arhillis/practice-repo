@@ -6,11 +6,12 @@ class EditForm extends Component {
     render(){
         return (
             <form className="col-12 col-md-6" id="source-form">
-                <FormGroup name="title" />
-                <hr></hr>
                 <Authors authors = {this.props.authors} />
+                <hr></hr>
+                <FormGroup name="title" />
                 <FormGroup name="publisher" />
-                <FormGroup name="year" />                
+                <FormGroup name="year" />     
+                   
             </form>
         )
     }
