@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 class Authors extends Component {
+    onChange (){
+        console.log('How many authors?')
+    }
     render() {
         return (
             <div className="author-group">
                     <div className="form-group">
                         <label for="num-authors">Authors:</label>
-                        <select className="form-control">
+                        <select className="form-control" onChange={this.onChange}>
                             <option>One</option>
                             <option>Two</option>
                             <option>Three or more</option>
