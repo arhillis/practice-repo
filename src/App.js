@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import uuid from 'uuid';
 import Sources from './components/sources';
 import EditForm from './components/editForm';
 import SelectForm from './components/selectForm';
@@ -8,7 +9,7 @@ class App extends React.Component {
   state = {
     sources: [
       {
-        id: 1,
+        id: uuid.v4(),
         title: "You don't know Jack",
         author: {
           firstName: "Jill",
@@ -18,7 +19,7 @@ class App extends React.Component {
         year: 2004
       },
       {
-        id: 2,
+        id: uuid.v4(),
         title: "Jane Eyre",
         author: {
           firstName: "Charlotte",
@@ -28,7 +29,7 @@ class App extends React.Component {
         year: 2005
       },
       {
-        id: 3,
+        id: uuid.v4(),
         title: "Simple CSS",
         author: {
           firstName: "Debbie",
