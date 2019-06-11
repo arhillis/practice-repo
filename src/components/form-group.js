@@ -5,7 +5,7 @@ class FormGroup extends Component {
         const name = this.props.name;
         return (
             <div className="form-group">
-                <label for={name} className="col-form-label">{name[0].toUpperCase() + name.slice(1, name.length)}</label>
+                <label htmlFor={name} className="col-form-label">{name[0].toUpperCase() + name.slice(1, name.length)}</label>
                 <input type="text" className="form-control" name={name} required></input>
             </div>
         );

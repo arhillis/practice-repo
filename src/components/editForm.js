@@ -11,7 +11,7 @@ class EditForm extends Component {
                 <FormGroup name="title" />
                 <FormGroup name="publisher" />
                 <FormGroup name="year" />     
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         )
     }
