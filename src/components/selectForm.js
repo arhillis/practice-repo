@@ -7,8 +7,8 @@ class selectForm extends Component {
                 <form id="editPanel" className="col-12 col-md-6">
                     <select id="srcOptions" className="form-control mb-2">
                         {this.props.sources.map(source => 
-                        <SourceOptions source = {source}
-                        />)}
+                            <SourceOptions source = {source} key={source.id}/>
+                        )}
                     </select>
                     <button id="edit-btn" className="btn btn-primary mr-2">Edit Source</button>
                     <button id="remove-btn" className="btn btn-danger">Remove Source</button>

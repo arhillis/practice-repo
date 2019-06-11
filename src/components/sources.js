@@ -6,7 +6,7 @@ class Sources extends React.Component{
         return (
             <ul id="sources" key="sources" style={{listStyleType:'none'}}>
                 {this.props.sources.map(source => 
-                    <Source source ={source}/>
+                    <Source source ={source} key={source.id}/>
                 )}
             </ul>
         )
