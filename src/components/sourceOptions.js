@@ -2,9 +2,9 @@ import  React, { Component } from 'react';
 
 class sourceOption extends Component {
     render() {
-        const {title, author} = this.props.source;
+        const {id, title, author} = this.props.source;
         return (
-            <option>
+            <option value={id}>
                 {title} by {author.firstName} {author.lastName}
             </option>
         );
