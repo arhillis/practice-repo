@@ -30,13 +30,20 @@ class selectForm extends Component {
             console.log(this.state.selectedSource);
             return (
                 <form id="editPanel" className="col-12 col-md-6">
-                    <select id="srcOptions" className="form-control mb-2" onInput={this.selectSource.bind(this)}>
-                        {this.props.sources.map(source => 
-                            <SourceOptions source = {source} key={source.id}/>
-                        )}
+                    <select id="srcOptions" 
+                            className="form-control mb-2" 
+                            onInput={this.selectSource.bind(this)}>
+                            {this.props.sources.map(source => 
+                                <SourceOptions source = {source} key={source.id}/>
+                            )}
                     </select>
-                    <input  type="submit" id="edit-btn" className="btn btn-primary mr-2" value="Edit Source"/>
-                    <button id="remove-btn" className="btn btn-danger">Remove Source</button>
+                    <input  type="submit" 
+                            id="edit-btn" 
+                            className="btn btn-primary mr-2" 
+                            value="Edit Source"/>
+                    <button id="remove-btn" 
+                            className="btn btn-danger">
+                                Remove Source</button>
                 </form>
             );
         }
