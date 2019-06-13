@@ -2,12 +2,25 @@ import React from 'react';
 
 class Source extends React.Component{
     render(){
-        const {title, author, publisher, year} = this.props.source;
-        return (
-            <li>
-                {author.lastName}, {author.firstName}. <cite>{title}</cite>. {publisher}, {year}.
-            </li>
-        )
+        const {title, authors, publisher, year} = this.props.source;
+
+        if(authors.length === 1){
+            const {firstName, lastName} = authors[0];
+
+            return (
+                <li>
+                    {lastName}, {firstName}. <cite>{title}</cite>. {publisher}, {year}.
+                </li>
+            )
+        }else{
+            const [author1, author2] = authors;
+            
+            return (
+                <li>
+                    {author1.lastName}, {author1.firstName} and {author2.firstName} {author2.lastName}. <cite>{title}</cite>. {publisher}, {year}.
+                </li>
+            )
+        }
     }
 }
 
