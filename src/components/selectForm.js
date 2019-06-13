@@ -26,8 +26,12 @@ class selectForm extends Component {
 
         }
 
+        removeSource(e){
+            e.preventDefault();
+            this.props.removeSource(this.state.selectedSource.id);
+        }
+
         render() {
-            console.log(this.state.selectedSource);
             return (
                 <form id="editPanel" className="col-12 col-md-6">
                     <select id="srcOptions" 
@@ -37,14 +41,16 @@ class selectForm extends Component {
                                 <SourceOptions source = {source} key={source.id}/>
                             )}
                     </select>
+
                     <input  type="submit" 
                             id="edit-btn" 
                             className="btn btn-primary mr-2" 
-                            value="Edit Source"/>
-                            
+                            value="Edit Source" />
+
                     <input  type="submit" 
                             id="remove-btn" 
                             className="btn btn-danger"
+                            onClick={this.removeSource.bind(this)}
                             value="Remove Source" />
                 </form>
             );
