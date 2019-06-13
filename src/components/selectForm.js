@@ -33,7 +33,7 @@ class selectForm extends Component {
 
         render() {
             return (
-                <form id="editPanel" className="col-12 col-md-6">
+                <form id="editPanel" className="col-12 col-md-6 mt-4">
                     <select id="srcOptions" 
                             className="form-control mb-2" 
                             onInput={this.selectSource.bind(this)}>
