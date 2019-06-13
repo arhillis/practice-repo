@@ -6,40 +6,53 @@ import EditForm from './components/editForm';
 import SelectForm from './components/selectForm';
 
 class App extends React.Component { 
-  state = {
-    sources: [
-      {
-        id: uuid.v4(),
-        title: "You don't know Jack",
-        author: {
-          firstName: "Jill",
-          lastName: "Hillard"
+  constructor(props){
+    super(props);
+
+    this.state = {
+      sources: [
+        {
+          id: uuid.v4(),
+          title: "You don't know Jack",
+          author: {
+            firstName: "Jill",
+            lastName: "Hillard"
+          },
+          publisher: "Random House Books",
+          year: 2004
         },
-        publisher: "Random House Books",
-        year: 2004
-      },
-      {
-        id: uuid.v4(),
-        title: "Jane Eyre",
-        author: {
-          firstName: "Charlotte",
-          lastName: "Bronte"
+        {
+          id: uuid.v4(),
+          title: "Jane Eyre",
+          author: {
+            firstName: "Charlotte",
+            lastName: "Bronte"
+          },
+          publisher: "Thornfield Media",
+          year: 2005
         },
-        publisher: "Thornfield Media",
-        year: 2005
-      },
-      {
-        id: uuid.v4(),
-        title: "Simple CSS",
-        author: {
-          firstName: "Debbie",
-          lastName: "Developer"
+        {
+          id: uuid.v4(),
+          title: "Simple CSS",
+          author: {
+            firstName: "Debbie",
+            lastName: "Developer"
+          },
+          publisher: "DevWorld Press",
+          year: 2006
         },
-        publisher: "DevWorld Press",
-        year: 2006
-      },
-    ]
+      ]
+    };
+
+    this.removeSource = this.removeSource.bind(this);
   }
+
+  removeSource(id){
+    this.setState({
+      sources: this.state.sources.filter(source => source.id !== id)
+    })
+  }
+
   render(){
     const {sources} = this.state;
     return (
@@ -48,7 +61,7 @@ class App extends React.Component {
       <Sources sources={sources}/>
       <fieldset className="row">
         <EditForm sources={sources} />
-        <SelectForm sources={sources} />        
+        <SelectForm sources={sources} removeSource={this.removeSource}/>        
       </fieldset>
     </div>
     );
