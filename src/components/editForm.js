@@ -3,6 +3,7 @@ import FormGroup from './form-group';
 import Authors from './authors';
 
 class EditForm extends Component {
+    
     render(){
         return (
             <form className="col-12 col-md-6" id="source-form">
@@ -11,7 +12,9 @@ class EditForm extends Component {
                 <FormGroup name="title" />
                 <FormGroup name="publisher" />
                 <FormGroup name="year" />     
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <input type="submit" 
+                        className="btn btn-primary" 
+                        value="Submit"/>
             </form>
         )
     }
