@@ -14,30 +14,40 @@ class App extends React.Component {
         {
           id: uuid.v4(),
           title: "You don't know Jack",
-          author: {
-            firstName: "Jill",
-            lastName: "Hillard"
-          },
+          authors: [
+            {
+              firstName: "Jill",
+              lastName: "Hillard"
+            }
+          ],
           publisher: "Random House Books",
           year: 2004
         },
         {
           id: uuid.v4(),
           title: "Jane Eyre",
-          author: {
-            firstName: "Charlotte",
-            lastName: "Bronte"
-          },
+          authors: [
+            {
+              firstName: "Charlotte",
+              lastName: "Bronte"
+            }
+          ],
           publisher: "Thornfield Media",
           year: 2005
         },
         {
           id: uuid.v4(),
           title: "Simple CSS",
-          author: {
-            firstName: "Debbie",
-            lastName: "Developer"
-          },
+          authors: [
+            {
+              firstName: "Debbie",
+              lastName: "Developer"
+            },
+            {
+              firstName: "Donnie",
+              lastName: "Developer"
+            }
+          ],
           publisher: "DevWorld Press",
           year: 2006
         },
