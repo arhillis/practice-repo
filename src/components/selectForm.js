@@ -41,9 +41,11 @@ class selectForm extends Component {
                             id="edit-btn" 
                             className="btn btn-primary mr-2" 
                             value="Edit Source"/>
-                    <button id="remove-btn" 
-                            className="btn btn-danger">
-                                Remove Source</button>
+                            
+                    <input  type="submit" 
+                            id="remove-btn" 
+                            className="btn btn-danger"
+                            value="Remove Source" />
                 </form>
             );
         }
