@@ -6,18 +6,19 @@ class EditForm extends Component {
     constructor(){
         super();
         this.state = {
-            title: ''
+            title: '',
+            publisher: '',
+            year: 2000
         }
     }
 
     changeProp(prop, str){
         this.setState({[prop]: str});
-        console.log(this.state[prop])
     }
 
     onClick(e){
         e.preventDefault();
-        console.log(e.target.value);
+        console.log(this.state);
     }
     render(){
         if(this.props.source)
@@ -25,12 +26,18 @@ class EditForm extends Component {
 
         return (
             <form className="col-12 col-md-6" id="source-form"
-                        onClick={this.onClick.bind(this)}>
+                        onSubmit={this.onClick.bind(this)}>
                 <Authors authors = {this.props.authors || [{}]} />
                 <hr></hr>
-                <FormGroup name="title" onChange={this.changeProp.bind(this)}/>
-                <FormGroup name="publisher" />
-                <FormGroup name="year" />     
+                <FormGroup name="title" 
+                    onChange={this.changeProp.bind(this)}
+                    />
+                <FormGroup name="publisher"
+                    onChange={this.changeProp.bind(this)}
+                    />
+                <FormGroup name="year"
+                    onChange={this.changeProp.bind(this)}
+                    />    
                 <input type="submit" 
                         className="btn btn-primary" 
                         value="Submit"/>
