@@ -10,8 +10,9 @@ class EditForm extends Component {
         }
     }
 
-    changeAuthor(event){
-        this.setState({author: event.target.value});
+    changeProp(prop, str){
+        this.setState({[prop]: str});
+        console.log(this.state[prop])
     }
 
     onClick(e){
@@ -27,7 +28,7 @@ class EditForm extends Component {
                         onClick={this.onClick.bind(this)}>
                 <Authors authors = {this.props.authors || [{}]} />
                 <hr></hr>
-                <FormGroup name="title" onChange={this.changeAuthor.bind(this)}/>
+                <FormGroup name="title" onChange={this.changeProp.bind(this)}/>
                 <FormGroup name="publisher" />
                 <FormGroup name="year" />     
                 <input type="submit" 

@@ -10,7 +10,7 @@ class FormGroup extends Component {
                     type="text" 
                     className="form-control" 
                     name={name} 
-                    onChange={this.props.onChange}
+                    onChange={(event) => this.props.onChange(name, event.target.value)}
                     required></input>
             </div>
         );
