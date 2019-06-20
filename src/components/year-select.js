@@ -7,13 +7,18 @@ class YearSelect extends Component{
         for(let i = 2019; i > 1899; i--){
             years.push(i)
         }
-
+        
         return (
             <select 
                 className="form-control" 
-                id="yearSelect">  
+                id="yearSelect"
+                onChange={(e) => 
+                    this.props.changeProp('year', e.target.value)}>  
                     {years.map(year => 
-                        (<option key={year}>{year}</option>)
+                        (<option 
+                            key={year}>
+                                {year}
+                        </option>)
                     )}
             </select>
         );
