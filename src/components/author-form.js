@@ -3,11 +3,13 @@ import React, { Component } from 'react';
 class AuthorForm extends Component {
     render() {
         return (                
-            <div>
+            <div className="author">
                 <label>Author</label>
                 <div className="row">
                     <div className="col">
-                        <input type="text" className="form-control" placeholder="First name" />
+                        <input type="text" className="form-control" placeholder="First name" 
+                        onChange={(e) => this.props.onChangeAuthor(e.target.value)}
+                        />
                     </div>
                     <div className="col">
                         <input type="text" className="form-control" placeholder="Last name" />
