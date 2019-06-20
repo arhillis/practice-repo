@@ -20,10 +20,6 @@ class Authors extends Component {
         this.setState({authors: arr});
     }
 
-    changeAuthor(value){
-        console.log(value);
-    }
-
     render() {      
         return (
             <div className="author-group">
