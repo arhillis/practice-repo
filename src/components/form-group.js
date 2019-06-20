@@ -8,7 +8,7 @@ class FormGroup extends Component {
             <div className="form-group">
                 <label htmlFor={name} className="col-form-label">{name[0].toUpperCase() + name.slice(1, name.length)}</label>
                 {name === 'year' ?
-                    <YearSelect /> :
+                    <YearSelect changeProp={this.props.onChange}/> :
                     <input 
                         type="text" 
                         className="form-control" 
