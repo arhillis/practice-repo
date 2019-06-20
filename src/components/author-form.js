@@ -24,12 +24,17 @@ class AuthorForm extends Component {
                 <div className="row">
                     <div className="col">
                         <input type="text" 
-                            className="form-control" placeholder="First name" 
-                        onChange={(e) => this.changeAuthor('firstName', e.target.value)}
+                                className="form-control" 
+                                placeholder="First name" 
+                                onChange={(e) => this.changeAuthor('firstName', e.target.value)}
                         />
                     </div>
                     <div className="col">
-                        <input type="text" className="form-control" placeholder="Last name" />
+                        <input type="text" 
+                                className="form-control" 
+                                placeholder="Last name" 
+                                onChange={(e) => this.changeAuthor('lastName', e.target.value)}
+                            />
                     </div>
                 </div>
             </div>
