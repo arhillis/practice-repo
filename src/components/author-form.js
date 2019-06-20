@@ -14,10 +14,10 @@ class AuthorForm extends Component {
     
     changeAuthor(prop, value){
         this.setState({[prop]: value})
+        this.props.addAuthor(this.state);
     }
 
     render() {
-        console.log(this.state);
         return (                
             <div className="author">
                 <label>Author</label>
