@@ -19,6 +19,16 @@ class App extends React.Component {
               id: uuid.v4(),
               firstName: "Jill",
               lastName: "Hillard"
+            },
+            {
+              id: uuid.v4(),
+              firstName: "Little",
+              lastName: "Miss Muffet"
+            },
+            {
+              id: uuid.v4(),
+              firstName: "Bo",
+              lastName: "Peep"
             }
           ],
           publisher: "Random House Books",
