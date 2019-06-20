@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import YearSelect from './year-select';
 
 class FormGroup extends Component {
     render() {
@@ -6,12 +7,16 @@ class FormGroup extends Component {
         return (
             <div className="form-group">
                 <label htmlFor={name} className="col-form-label">{name[0].toUpperCase() + name.slice(1, name.length)}</label>
-                <input 
-                    type="text" 
-                    className="form-control" 
-                    name={name} 
-                    onChange={(event) => this.props.onChange(name, event.target.value)}
-                    required></input>
+                {name === 'year' ?
+                    <YearSelect /> :
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name={name} 
+                        onChange={(event) => this.props.onChange(name, event.target.value)}
+                        required></input>                
+                }
+                
             </div>
         );
     }
