@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FormGroup from './form-group';
-import Authors from './authors';
+import AuthorFormGroup from './author-form-group';
 
 class EditForm extends Component {
     constructor(){
@@ -29,7 +29,7 @@ class EditForm extends Component {
         return (
             <form className="col-12 col-md-6" id="source-form"
                         onSubmit={this.onClick.bind(this)}>
-                <Authors authors = {this.props.authors || [{}]} />
+                <AuthorFormGroup authors = {this.props.authors || [{}]} />
                 <hr></hr>
                 <FormGroup name="title" 
                     onChange={this.changeProp.bind(this)}
