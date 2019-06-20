@@ -7,6 +7,7 @@ class Authors extends Component {
         this.state = {
             authors: this.props.authors
         }
+
     }
     
     onChange (event){
@@ -18,6 +19,10 @@ class Authors extends Component {
         }
 
         this.setState({authors: arr});
+    }
+
+    addAuthor(author){
+        console.log(author);
     }
 
     render() {      
@@ -34,7 +39,7 @@ class Authors extends Component {
                     <div id="author-form">
                         {this.state.authors.map((author, index) => 
                             <AuthorForm key={index} author={author}
-                                onChangeAuthor={this.changeAuthor}
+                                addAuthor={this.addAuthor}
                                 index={index}
                             />
                         )}
