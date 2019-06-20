@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 class AuthorForm extends Component {
     constructor(){
         super()
         this.state = {
+            id: uuid.v4(),
             firstName: '',
             lastName: ''
         }
@@ -12,8 +14,9 @@ class AuthorForm extends Component {
     }
 
     
-    changeAuthor(prop, value){
-        this.setState({[prop]: value})
+    changeAuthor(event, prop){
+        event.preventDefault()
+        this.setState({[prop]: event.target.value});
         this.props.addAuthor(this.state);
     }
 
@@ -26,14 +29,14 @@ class AuthorForm extends Component {
                         <input type="text" 
                                 className="form-control" 
                                 placeholder="First name" 
-                                onChange={(e) => this.changeAuthor('firstName', e.target.value)}
+                                onChange={(e) => this.changeAuthor(e, 'firstName')}
                         />
                     </div>
                     <div className="col">
                         <input type="text" 
                                 className="form-control" 
                                 placeholder="Last name" 
-                                onChange={(e) => this.changeAuthor('lastName', e.target.value)}
+                                onChange={(e) => this.changeAuthor(e, 'lastName')}
                             />
                     </div>
                 </div>
