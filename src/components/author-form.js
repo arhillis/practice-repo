@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 class AuthorForm extends Component {
+    constructor(){
+        super()
+        this.state = {
+            firstName: '',
+            lastName: ''
+        }
+    }
     render() {
         return (                
             <div className="author">
