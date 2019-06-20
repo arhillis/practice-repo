@@ -9,8 +9,8 @@ class YearSelect extends Component{
         }
 
         return (
-            <select class="form-control" id="exampleFormControlSelect1">  
-                {years.map(year => (<option>{year}</option>))}
+            <select className="form-control" id="exampleFormControlSelect1">  
+                {years.map(year => (<option key={year}>{year}</option>))}
             </select>
         );
 
