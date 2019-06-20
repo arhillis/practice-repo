@@ -6,6 +6,7 @@ class EditForm extends Component {
     constructor(){
         super();
         this.state = {
+            authors: [],
             title: '',
             publisher: '',
             year: 2000
