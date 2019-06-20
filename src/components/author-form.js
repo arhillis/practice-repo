@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import uuid from 'uuid';
 
 class AuthorForm extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             id: uuid.v4(),
             firstName: '',
