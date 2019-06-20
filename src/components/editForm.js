@@ -21,6 +21,7 @@ class EditForm extends Component {
         console.log(this.state);
     }
     render(){
+
         if(this.props.source)
             this.setState({title: this.props.source.title})
 
@@ -37,7 +38,7 @@ class EditForm extends Component {
                     />
                 <FormGroup name="year"
                     onChange={this.changeProp.bind(this)}
-                    />    
+                    />
                 <input type="submit" 
                         className="btn btn-primary" 
                         value="Submit"/>
