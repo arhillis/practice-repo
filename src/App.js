@@ -16,6 +16,7 @@ class App extends React.Component {
           title: "You don't know Jack",
           authors: [
             {
+              id: uuid.v4(),
               firstName: "Jill",
               lastName: "Hillard"
             }
@@ -28,6 +29,7 @@ class App extends React.Component {
           title: "Jane Eyre",
           authors: [
             {
+              id: uuid.v4(),
               firstName: "Charlotte",
               lastName: "Bronte"
             }
@@ -40,10 +42,12 @@ class App extends React.Component {
           title: "Simple CSS",
           authors: [
             {
+              id: uuid.v4(),
               firstName: "Debbie",
               lastName: "Developer"
             },
             {
+              id: uuid.v4(),
               firstName: "Donnie",
               lastName: "Developer"
             }
