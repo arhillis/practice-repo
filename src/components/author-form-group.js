@@ -48,7 +48,6 @@ class Authors extends Component {
     }
 
     render() {  
-        console.log(this.state.authors[0])
 
         return (
             <div className="author-group">
