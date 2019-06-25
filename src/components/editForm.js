@@ -32,12 +32,15 @@ class EditForm extends Component {
                 <AuthorFormGroup authors = {this.props.authors || [{}]} />
                 <hr></hr>
                 <FormGroup name="title" 
+                    value={this.state.title}
                     onChange={this.changeProp}
                     />
                 <FormGroup name="publisher"
+                    value={this.state.publisher}
                     onChange={this.changeProp}
                     />
                 <FormGroup name="year"
+                    value={this.state.year}
                     onChange={this.changeProp}
                     />
                 <input type="submit" 
