@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import YearSelect from './year-select';
 
 class FormGroup extends Component {
+    constructor(props){
+        super(props)
+        this.onChange = this.props.onChange.bind(this)
+    }
     render() {
         const name = this.props.name;
         return (
@@ -13,7 +17,7 @@ class FormGroup extends Component {
                         type="text" 
                         className="form-control" 
                         name={name} 
-                        onChange={(event) => this.props.onChange(name, event.target.value)}
+                        onChange={this.onChange}
                         required></input>                
                 }
                 
