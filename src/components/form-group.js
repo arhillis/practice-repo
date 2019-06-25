@@ -6,11 +6,15 @@ class FormGroup extends Component {
         super(props)
         this.onChange = this.props.onChange.bind(this)
     }
+
+    titleCase(name){
+        return name[0].toUpperCase() + name.slice(1, name.length)
+    }
     render() {
         const {name, value}= this.props;
         return (
             <div className="form-group">
-                <label htmlFor={name} className="col-form-label">{name[0].toUpperCase() + name.slice(1, name.length)}</label>
+                <label htmlFor={name} className="col-form-label">{this.titleCase(name)}</label>
                 {name === 'year' ?
                     <YearSelect changeProp={this.onChange}/> :
                     <input 
