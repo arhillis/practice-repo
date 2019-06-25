@@ -12,9 +12,14 @@ class FormGroup extends Component {
     }
     render() {
         const {name, value}= this.props;
+
         return (
             <div className="form-group">
-                <label htmlFor={name} className="col-form-label">{this.titleCase(name)}</label>
+                <label htmlFor={name} 
+                    className="col-form-label">
+                    {this.titleCase(name)}
+                </label>
+                
                 {name === 'year' ?
                     <YearSelect changeProp={this.onChange}/> :
                     <input 
