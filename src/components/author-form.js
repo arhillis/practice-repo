@@ -35,9 +35,10 @@ class AuthorForm extends Component {
                     </div>
                     <div className="col">
                         <input type="text" 
+                                name = 'lastName'
                                 className="form-control" 
                                 placeholder="Last name" 
-                                onChange={(e) => this.changeAuthor(e, 'lastName')}
+                                onChange={this.changeAuthor}
                             />
                     </div>
                 </div>
