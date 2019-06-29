@@ -14,29 +14,32 @@ class AuthorForm extends Component {
     }
 
     
-    changeAuthor(event, prop){
-        event.preventDefault()
-        this.setState({[prop]: event.target.value});
-        this.props.addAuthor(this.state);
+    changeAuthor(event){
+        const {name, value} = event.target;
+        this.setState({[name]: value});
+        this.props.addAuthor(this.state)
     }
 
     render() {
-        return (                
+        return (             
             <div className="author">
+            <p>{this.state.firstName}</p> 
                 <label>Author</label>
                 <div className="row">
                     <div className="col">
                         <input type="text" 
+                                name= 'firstName'
                                 className="form-control" 
                                 placeholder="First name" 
-                                onChange={(e) => this.changeAuthor(e, 'firstName')}
+                                onChange={this.changeAuthor}
                         />
                     </div>
                     <div className="col">
                         <input type="text" 
+                                name = 'lastName'
                                 className="form-control" 
                                 placeholder="Last name" 
-                                onChange={(e) => this.changeAuthor(e, 'lastName')}
+                                onChange={this.changeAuthor}
                             />
                     </div>
                 </div>
