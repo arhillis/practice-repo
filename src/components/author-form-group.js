@@ -25,33 +25,18 @@ class Authors extends Component {
 
     addAuthor(newAuthor){
 
-        this.setState(prevState =>{
-            const {authors} = prevState;
-            if(prevState.authors){
-                if(!authors[0].id){//The array just has an empty object
-                    return {authors: [newAuthor]}
-                }else if(authors.filter(author => author.id === newAuthor.id).lenth === 0){//This author has not been added
-                    return {authors: [...authors , newAuthor]}
-                }else{
-                    authors.map(author =>{
-                        if(author.id === newAuthor.id){
-                            Object.assign(author, newAuthor);
-                        }
-                        return author;
-                    })
-                }
-                
-            }         
-            return {authors: authors}
+        this.setState(prevState => {
+            prevState.authors[0] = newAuthor;
+            return prevState;
         })
 
     }
 
     render() {  
-        console.log(this.state.authors[0])
-
+        const author = this.state.authors[0];
         return (
             <div className="author-group">
+                    {author.firstName ? author.firstName : ""}
                     <div className="form-group">
                         <label htmlFor="num-authors">Authors:</label>
                         <select className="form-control" onChange={this.onChange.bind(this)}>
