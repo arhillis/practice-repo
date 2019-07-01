@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {HashRouter, Route, Link} from 'react-router-dom';
 import uuid from 'uuid';
 import Sources from './components/sources';
 import EditForm from './components/editForm';
@@ -80,14 +81,16 @@ class App extends React.Component {
   render(){
     const {sources} = this.state;
     return (
-      <div id="Works" className="container App">
-      <h1 id="head">Works Cited</h1>      
-      <Sources sources={sources}/>
-      <fieldset className="row">
-        <EditForm sources={sources} />
-        <SelectForm sources={sources} removeSource={this.removeSource}/>        
-      </fieldset>
-    </div>
+      <HashRouter basename="/">
+        <div id="Works" className="container App">
+        <h1 id="head">Works Cited</h1>      
+        <Sources sources={sources}/>
+        <fieldset className="row">
+          <EditForm sources={sources} />
+          <SelectForm sources={sources} removeSource={this.removeSource}/>        
+        </fieldset>
+      </div>
+    </HashRouter>
     );
   }
 
