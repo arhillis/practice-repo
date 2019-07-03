@@ -10,9 +10,7 @@ class Authors extends Component {
 
         this.changeAuthor = this.props.onEdit.bind(this);
 
-    }
-
-  
+    }  
 
     render() {  
         return (
