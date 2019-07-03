@@ -6,13 +6,33 @@ class EditForm extends Component {
     constructor(){
         super();
         this.state = {
-            authors: [],
+            authors: [
+                {
+                    firstName: '',
+                    lastName: ''
+                }
+            ],
             title: '',
             publisher: '',
             year: 2000
         }
 
         this.changeProp = this.changeProp.bind(this)
+        this.numAuthors = this.numAuthors.bind(this)
+    }
+    
+    numAuthors(event){
+        let arr = [], num = parseInt(event.target.value);
+        
+        while(num > 0){
+            arr.push({
+                firstName: '',
+                lastName: ''
+            });
+            num--;
+        }
+        this.setState({authors: arr});
+
     }
 
     changeProp(event){
@@ -29,7 +49,9 @@ class EditForm extends Component {
         return (
             <form className="col-12 col-md-6" id="source-form"
                         onSubmit={this.onClick.bind(this)}>
-                <AuthorFormGroup authors = {this.props.authors || [{}]} />
+                <AuthorFormGroup authors = {this.state.authors} 
+                    onChange={this.numAuthors}
+                />
                 <hr></hr>
                 <FormGroup name="title" 
                     value={this.state.title}
