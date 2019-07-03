@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {HashRouter, Route, Link} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import uuid from 'uuid';
 import Sources from './components/sources';
 import EditForm from './components/editForm';
