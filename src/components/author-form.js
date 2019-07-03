@@ -16,8 +16,16 @@ class AuthorForm extends Component {
     
     changeAuthor(event){
         const {name, value} = event.target;
-        this.setState({[name]: value});
-        this.props.addAuthor(this.state)
+        this.setState(prevState =>{
+            const newAuthor = {
+                id: this.state.id,
+                firstName: name === 'firstName' ? value : prevState.firstName,
+                lastName: name === 'lastName' ? value : prevState.lastName
+            }
+
+            this.props.addAuthor(newAuthor);
+            return newAuthor;
+        });
     }
 
     render() {
