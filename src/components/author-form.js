@@ -31,7 +31,6 @@ class AuthorForm extends Component {
     render() {
         return (             
             <div className="author">
-            <p>{this.state.firstName}</p> 
                 <label>Author</label>
                 <div className="row">
                     <div className="col">
