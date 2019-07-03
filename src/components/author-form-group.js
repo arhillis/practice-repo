@@ -8,17 +8,11 @@ class Authors extends Component {
             authors: this.props.authors
         }
 
-        this.addAuthor = this.addAuthor.bind(this);
+        this.changeAuthor = this.props.onEdit.bind(this);
 
     }
 
-    addAuthor(newAuthor){
-        this.setState(prevState => {
-            prevState.authors[0] = newAuthor;            
-            return prevState;
-        })
-
-    }
+  
 
     render() {  
         return (
@@ -34,7 +28,7 @@ class Authors extends Component {
                     <div id="author-form">
                         {this.props.authors.map((author, index) => 
                             <AuthorForm key={index} author={author}
-                                addAuthor={this.addAuthor}
+                                changeAuthor={this.changeAuthor}
                                 index={index}
                             />
                         )}

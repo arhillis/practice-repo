@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import uuid from 'uuid';
+//import uuid from 'uuid';
 
 class AuthorForm extends Component {
     constructor(props){
         super(props)
         this.state = {
-            id: uuid.v4(),
-            firstName: '',
-            lastName: ''
+            id: this.props.author.id,
+            firstName: this.props.author.firstName,
+            lastName: this.props.author.lastName,
+            index: this.props.index
         }
 
         this.changeAuthor = this.changeAuthor.bind(this);
@@ -22,8 +23,8 @@ class AuthorForm extends Component {
                 firstName: name === 'firstName' ? value : prevState.firstName,
                 lastName: name === 'lastName' ? value : prevState.lastName
             }
-
-            this.props.addAuthor(newAuthor);
+            
+            this.props.changeAuthor(newAuthor, this.state.index);
             return newAuthor;
         });
     }

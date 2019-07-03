@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import FormGroup from './form-group';
 import AuthorFormGroup from './author-form-group';
+import uuid from 'uuid';
 
 class EditForm extends Component {
     constructor(){
         super();
         this.state = {
+            id: uuid.v4(),
             authors: [
                 {
+                    id: uuid.v4(),
                     firstName: '',
                     lastName: ''
                 }
@@ -19,6 +22,7 @@ class EditForm extends Component {
 
         this.changeProp = this.changeProp.bind(this)
         this.numAuthors = this.numAuthors.bind(this)
+        this.changeAuthor = this.changeAuthor.bind(this)
     }
     
     numAuthors(event){
@@ -26,6 +30,7 @@ class EditForm extends Component {
         
         while(num > 0){
             arr.push({
+                id: uuid.v4(),
                 firstName: '',
                 lastName: ''
             });
@@ -33,6 +38,13 @@ class EditForm extends Component {
         }
         this.setState({authors: arr});
 
+    }
+
+    changeAuthor(newAuthor, index){
+        this.setState(prevState => {
+            prevState.authors[index] = newAuthor;
+            return prevState;
+        })
     }
 
     changeProp(event){
@@ -45,12 +57,12 @@ class EditForm extends Component {
         console.log(this.state);
     }
     render(){
-
         return (
             <form className="col-12 col-md-6" id="source-form"
                         onSubmit={this.onClick.bind(this)}>
                 <AuthorFormGroup authors = {this.state.authors} 
                     onChange={this.numAuthors}
+                    onEdit={this.changeAuthor}
                 />
                 <hr></hr>
                 <FormGroup name="title" 
