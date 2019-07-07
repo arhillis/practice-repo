@@ -70,11 +70,19 @@ class App extends React.Component {
     };
 
     this.removeSource = this.removeSource.bind(this);
+    this.addSource = this.addSource.bind(this);
   }
 
   removeSource(id){
     this.setState({
       sources: this.state.sources.filter(source => source.id !== id)
+    })
+  }
+
+  addSource(newSource){
+    this.setState(prevState =>{
+      prevState.sources.push(newSource);
+      return prevState;
     })
   }
 
@@ -86,8 +94,12 @@ class App extends React.Component {
         <h1 id="head">Works Cited</h1>      
         <Sources sources={sources}/>
         <fieldset className="row">
-          <EditForm sources={sources} />
-          <SelectForm sources={sources} removeSource={this.removeSource}/>        
+          <EditForm sources={sources} 
+            onSubmit = {this.addSource}
+          />
+          <SelectForm sources={sources} 
+            removeSource={this.removeSource}
+          />        
         </fieldset>
       </div>
     </HashRouter>
