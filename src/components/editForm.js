@@ -23,6 +23,7 @@ class EditForm extends Component {
         this.changeProp = this.changeProp.bind(this)
         this.numAuthors = this.numAuthors.bind(this)
         this.changeAuthor = this.changeAuthor.bind(this)
+        this.onClick = this.onClick.bind(this)
     }
     
     numAuthors(event){
@@ -54,12 +55,13 @@ class EditForm extends Component {
 
     onClick(e){
         e.preventDefault();
-        console.log(this.state);
+        this.props.onSubmit(this.state)
+        
     }
     render(){
         return (
             <form className="col-12 col-md-6" id="source-form"
-                        onSubmit={this.onClick.bind(this)}>
+                        onSubmit={this.onClick}>
                 <AuthorFormGroup authors = {this.state.authors} 
                     onChange={this.numAuthors}
                     onEdit={this.changeAuthor}
