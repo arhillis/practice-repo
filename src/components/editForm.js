@@ -56,7 +56,19 @@ class EditForm extends Component {
     onClick(e){
         e.preventDefault();
         this.props.onSubmit(this.state)
-        
+        this.setState({
+            id: uuid.v4(),
+            authors: [
+                {
+                    id: uuid.v4(),
+                    firstName: '',
+                    lastName: ''
+                }
+            ],
+            title: '',
+            publisher: '',
+            year: 2000
+        })
     }
     render(){
         return (
