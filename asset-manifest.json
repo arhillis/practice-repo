@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/works-cited-maker/static/css/main.cfb70dac.chunk.css",
+    "main.js": "/works-cited-maker/static/js/main.c686b6b6.chunk.js",
+    "main.js.map": "/works-cited-maker/static/js/main.c686b6b6.chunk.js.map",
+    "runtime~main.js": "/works-cited-maker/static/js/runtime~main.cf511972.js",
+    "runtime~main.js.map": "/works-cited-maker/static/js/runtime~main.cf511972.js.map",
+    "static/js/2.e43bdeaa.chunk.js": "/works-cited-maker/static/js/2.e43bdeaa.chunk.js",
+    "static/js/2.e43bdeaa.chunk.js.map": "/works-cited-maker/static/js/2.e43bdeaa.chunk.js.map",
+    "index.html": "/works-cited-maker/index.html",
+    "precache-manifest.5575d4ebe2068485bb64d8ae3fd6f923.js": "/works-cited-maker/precache-manifest.5575d4ebe2068485bb64d8ae3fd6f923.js",
+    "service-worker.js": "/works-cited-maker/service-worker.js",
+    "static/css/main.cfb70dac.chunk.css.map": "/works-cited-maker/static/css/main.cfb70dac.chunk.css.map"
+  }
+}
